@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Александр & Анна | Приглашение на свадьбу</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      background-color: #FBF9F5;
+      color: #3A3533;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 24px 16px;
+      background-image: 
+        radial-gradient(circle at 0% 0%, rgba(245, 240, 235, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(235, 225, 215, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(250, 245, 240, 0.5) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    .invitation-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: rgba(255, 252, 248, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 56px;
+      padding: 48px 40px;
+      box-shadow: 
+        0 30px 50px -20px rgba(160, 140, 120, 0.15),
+        0 10px 20px -8px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 250, 240, 0.8);
+    }
+
+    @keyframes fadeUpSoft {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-block {
+      animation: fadeUpSoft 0.9s cubic-bezier(0.12, 0.71, 0.33, 1) forwards;
+      opacity: 0;
+    }
+
+    .section-block:nth-of-type(1) { animation-delay: 0.1s; }
+    .section-block:nth-of-type(2) { animation-delay: 0.2s; }
+    .section-block:nth-of-type(3) { animation-delay: 0.3s; }
+    .section-block:nth-of-type(4) { animation-delay: 0.4s; }
+    .section-block:nth-of-type(5) { animation-delay: 0.5s; }
+    .section-block:nth-of-type(6) { animation-delay: 0.6s; }
+    .section-block:nth-of-type(7) { animation-delay: 0.7s; }
+    .section-block:nth-of-type(8) { animation-delay: 0.8s; }
+
+    h1, h2, h3, .serif-font {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      font-size: clamp(3.8rem, 15vw, 6.5rem);
+      font-weight: 600;
+      line-height: 1.0;
+      color: #2C2826;
+      margin-bottom: 16px;
+      text-shadow: 0 4px 12px rgba(255, 255, 255, 0.8);
+    }
+
+    h2 {
+      font-size: clamp(2.2rem, 6vw, 3rem);
+      font-weight: 500;
+      color: #3A3533;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    h2 i {
+      font-size: 1.8rem;
+      color: #C2A99D;
+      opacity: 0.7;
+      font-weight: 300;
+    }
+
+    .hero-section {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .hero-sub {
+      display: inline-block;
+      background: rgba(235, 225, 218, 0.3);
+      backdrop-filter: blur(4px);
+      padding: 6px 28px;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #5E524A;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      margin-bottom: 16px;
+    }
+
+    .names-main {
+      font-size: clamp(4rem, 12vw, 7rem);
+    }
+
+    .main-photo-wrapper {
+      max-width: 500px;
+      margin: 24px auto 16px;
+    }
+
+    .main-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 200px 200px 40px 40px;
+      aspect-ratio: 1/1;
+      display: block;
+      box-shadow: 0 20px 30px -10px rgba(100, 80, 70, 0.15);
+    }
+
+    .guest-name-block {
+      text-align: center;
+      margin: 20px 0 10px;
+    }
+
+    .guest-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-style: italic;
+      color: #5E524A;
+      border-bottom: 1px solid #D6C8BC;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+
+    .elegant-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 32px 0 24px;
+    }
+
+    .elegant-divider-line {
+      height: 1px;
+      width: 120px;
+      background: linear-gradient(90deg, transparent, #D6C8BC, #B8A89A, #D6C8BC, transparent);
+    }
+
+    .elegant-divider i {
+      color: #C2A99D;
+      font-size: 0.9rem;
+    }
+
+    .invitation-text-block {
+      max-width: 750px;
+      margin: 0 auto;
+      text-align: center;
+      background: rgba(255, 250, 245, 0.3);
+      padding: 36px 32px;
+      border-radius: 48px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,240,0.7);
+    }
+
+    .registration-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      background: rgba(250, 245, 240, 0.4);
+      border-radius: 40px;
+      padding: 32px 36px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 250, 240, 0.8);
+      align-items: center;
+    }
+
+    .reg-details {
+      flex: 2;
+    }
+
+    .reg-photo-place {
+      flex: 1.2;
+      min-width: 240px;
+    }
+
+    .photo-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 32px;
+      display: block;
+      aspect-ratio: 5/4;
+    }
+
+    .square-photo {
+      aspect-ratio: 1/1;
+    }
+
+    .venue-block {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr;
+      gap: 30px;
+      background: rgba(250, 245, 240, 0.3);
+      border-radius: 44px;
+      padding: 30px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,240,0.6);
+    }
+
+    .yandex-maps-link {
+      display: inline-block;
+      margin-top: 16px;
+      background: rgba(200, 180, 165, 0.25);
+      padding: 10px 22px;
+      border-radius: 60px;
+      color: #4A403A;
+      text-decoration: none;
+      font-weight: 400;
+      border: 1px solid rgba(255,255,255,0.5);
+      transition: all 0.2s;
+    }
+
+    .yandex-maps-link:hover {
+      background: rgba(190, 170, 155, 0.4);
+    }
+
+    .yandex-maps-link i {
+      margin-right: 8px;
+      color: #E53E3E;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .timeline-item {
+      background: rgba(255, 250, 245, 0.5);
+      border-radius: 30px;
+      padding: 20px 12px;
+      text-align: center;
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(255,255,240,0.7);
+    }
+
+    .timeline-item i {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      color: #B8A89A;
+    }
+
+    .timeline-item strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    .dresscode-block {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      background: #F7F1EC;
+      border-radius: 48px;
+      padding: 24px 32px;
+    }
+
+    .color-swatch {
+      display: flex;
+      gap: 10px;
+    }
+
+    .swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 36px;
+      border: 2px solid white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    /* Блок подтверждения */
+    .rsvp-card {
+      background: rgba(250, 245, 240, 0.4);
+      border-radius: 44px;
+      padding: 36px 40px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 250, 240, 0.8);
+      margin-top: 32px;
+    }
+
+    /* Кнопка подтверждения в стиле сайта */
+    .confirm-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: rgba(210, 190, 175, 0.25);
+      backdrop-filter: blur(4px);
+      color: #3A3533;
+      text-decoration: none;
+      padding: 18px 32px;
+      border-radius: 60px;
+      font-size: 1.2rem;
+      font-weight: 400;
+      width: 100%;
+      transition: all 0.25s ease;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      cursor: pointer;
+    }
+
+    .confirm-btn:hover {
+      background: rgba(190, 170, 155, 0.35);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -8px rgba(120, 100, 90, 0.15);
+      border-color: rgba(210, 190, 175, 0.5);
+    }
+
+    .confirm-btn i {
+      font-size: 1.3rem;
+      color: #7A9E7E;
+    }
+
+    /* Блок с телефоном */
+    .phone-block {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(4px);
+      padding: 18px 32px;
+      border-radius: 60px;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #3A3533;
+      width: 100%;
+      text-align: center;
+      border: 1px solid rgba(210, 190, 175, 0.3);
+    }
+
+    .phone-block i {
+      margin-right: 10px;
+      color: #7A9E7E;
+    }
+
+    .final-thanks {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .footer-heart {
+      margin-top: 36px;
+      color: #D2B9AC;
+      font-size: 1.5rem;
+    }
+
+    .footer-heart i {
+      margin: 0 4px;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    /* Заглушка на случай отсутствия фото */
+    .photo-fallback {
+      background: linear-gradient(145deg, #F3EDE7, #E6DCD4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #9A8A7E;
+      border: 1.5px dashed #CBBEB4;
+    }
+
+    .photo-fallback i {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      opacity: 0.5;
+    }
+
+    .photo-fallback span {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      background: rgba(255,255,255,0.5);
+      padding: 4px 14px;
+      border-radius: 30px;
+    }
+
+    @media (max-width: 700px) {
+      .invitation-wrapper { padding: 32px 20px; border-radius: 36px; }
+      .timeline-grid { grid-template-columns: 1fr 1fr; }
+      .venue-block { grid-template-columns: 1fr; }
+      .registration-card { flex-direction: column; }
+      .rsvp-card { padding: 28px 20px; }
+      .photo-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="invitation-wrapper">
+    
+    <!-- ==================== 1. ПРЕВЬЮ С ИМЕНАМИ ==================== -->
+    <!-- 🔴 ЗАМЕНИТЬ: имена молодожёнов -->
+    <div class="section-block hero-section">
+      <div class="hero-sub">Сохраните дату</div>
+      <h1 class="names-main">Александр<br>& Анна</h1>
+      <div style="margin-top: 10px; font-size: 1.4rem; font-family: 'Cormorant Garamond', serif; color: #4A403A;">
+        28 · 08 · 2026
+      </div>
+    </div>
+
+    <!-- ==================== ГЛАВНОЕ ФОТО ПАРЫ ==================== -->
+    <!-- 🔴 ЗАМЕНИТЬ: положите фото в папку images/ и назовите main-photo.jpg -->
+    <div class="section-block main-photo-wrapper">
+      <img src="images/main-photo.jpg" alt="Александр и Анна" class="main-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="photo-fallback main-photo" style="display: none;">
+        <i class="fas fa-heart"></i>
+        <span>наше фото</span>
+      </div>
+    </div>
+
+    <!-- ==================== ПЕРСОНАЛИЗАЦИЯ: ИМЯ ГОСТЯ ==================== -->
+    <!-- 🔴 ЗАМЕНИТЬ: впишите имя гостя или пары -->
+    <div class="section-block guest-name-block">
+      <span class="guest-name">Дорогие наши</span>
+    </div>
+
+    <div class="elegant-divider">
+      <div class="elegant-divider-line"></div>
+      <i class="fas fa-circle" style="font-size: 0.3rem;"></i>
+      <div class="elegant-divider-line"></div>
+    </div>
+
+    <!-- ==================== 2. БЛОК ПРИГЛАШЕНИЯ ==================== -->
+    <!-- 🔴 ЗАМЕНИТЬ: текст приглашения -->
+    <div class="section-block invitation-text-block">
+      <p style="font-weight: 400; font-size: 1.2rem; margin-bottom: 20px;">
+        Этот день мы ждали очень долго. И будем счастливы видеть вас на нашей свадьбе.
+      </p>
+      <p style="font-weight: 300; margin-bottom: 24px;">
+        Приходите разделить с нами счастье, потанцевать, посмеяться 
+  и просто хорошо провести время. Всё будет просто и душевно.
+      </p>
+      <p style="font-style: italic;">Ждём вас, Александр и Анна</p>
+    </div>
+
+    <div class="elegant-divider">
+      <div class="elegant-divider-line"></div>
+      <i class="fas fa-heart" style="color: #D2B9AC; font-size: 0.8rem;"></i>
+      <div class="elegant-divider-line"></div>
+    </div>
+
+    <!-- ==================== 3. ЦЕРЕМОНИЯ В ЗАГСЕ ==================== -->
+    <!-- 🔴 ЗАМЕНИТЬ: название ЗАГСа, адрес, время -->
+    <div class="section-block">
+      <h2><i class="fas fa-pen-fancy"></i> Церемония в ЗАГСе</h2>
+      <div class="registration-card">
+        <div class="reg-details">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 16px;">Дворец бракосочетания №4</div>
+          <div style="display: flex; gap: 24px; flex-wrap: wrap; margin-bottom: 20px;">
+            <div><i class="fas fa-calendar-alt" style="margin-right: 10px; color: #B8A89A;"></i> 28 августа 2026</div>
+            <div><i class="fas fa-clock" style="margin-right: 10px; color: #B8A89A;"></i> 17:00</div>
+            <div><i class="fas fa-map-pin" style="margin-right: 10px; color: #B8A89A;"></i> Бутырская ул., 17</div>
+          </div>
+          <p style="margin-bottom: 20px; font-weight: 300;"><i class="fas fa-info-circle"></i> Просьба приехать немного заранее, церемония начнётся ровно в 17:00.</p>
+          <!-- 🔴 ЗАМЕНИТЬ: ссылка на Яндекс.Карты для ЗАГСа -->
+          <a href="https://yandex.ru/maps/-/CPCyuOL9" class="yandex-maps-link" target="_blank"><i class="fab fa-yandex"></i> Открыть в Яндекс.Картах</a>
+        </div>
+        <div class="reg-photo-place">
+          <!-- 🔴 ЗАМЕНИТЬ: положите фото в папку images/ и назовите zags.jpg -->
+          <img src="images/zags.jpg" alt="Дворец бракосочетания" class="photo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback photo-image" style="display: none;">
+            <i class="fas fa-landmark"></i>
+            <span>фото ЗАГСа</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 4. БАНКЕТ В OXUS ==================== -->
+    <!-- 🔴 ЗАМЕНИТЬ: название ресторана, адрес -->
+    <div class="section-block" style="margin-top: 40px;">
+      <h2><i class="fas fa-utensils"></i> Праздничный ужин</h2>
+      <div class="venue-block">
+        <div>
+          <h3 style="font-size: 2.4rem; margin-bottom: 8px;">Ресторан Oxus</h3>
+          <p style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px;"><i class="fas fa-location-dot"></i> Трифоновская ул., 24, стр. 1</p>
+          
+          <p style="margin-bottom: 20px; font-weight: 300;">Уютное место с очень вкусной едой и приятной атмосферой — то, что нужно для тёплого вечера в кругу близких.</p>
+          
+          <p><i class="fas fa-clock"></i> Сбор гостей с 18:00, начало ужина в 18:30</p>
+          
+          <!-- 🔴 ЗАМЕНИТЬ: ссылка на Яндекс.Карты для ресторана -->
+          <a href="https://yandex.ru/maps/-/CPCyyImr" class="yandex-maps-link" target="_blank"><i class="fab fa-yandex"></i> Открыть в Яндекс.Картах</a>
+        </div>
+        <div>
+          <!-- 🔴 ЗАМЕНИТЬ: положите фото в папку images/ и назовите oxus.jpg -->
+          <img src="images/oxus.jpg" alt="Ресторан Oxus" class="photo-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback photo-image" style="display: none;">
+            <i class="fas fa-utensils"></i>
+            <span>фото ресторана</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 5. ПРОГРАММА ДНЯ (С ИКОНКАМИ) ==================== -->
+    <!-- 🔴 ЗАМЕНИТЬ: тайминг при необходимости -->
+    <div class="section-block" style="margin-top: 40px;">
+      <h2><i class="fas fa-list-ul"></i> Как всё пройдёт</h2>
+      <div class="timeline-grid">
+        <div class="timeline-item">
+          <i class="fas fa-users"></i>
+          <strong>16:40</strong> Сбор у ЗАГСа
+        </div>
+        <div class="timeline-item">
+          <i class="fas fa-heart"></i>
+          <strong>17:00</strong> Церемония
+        </div>
+        <div class="timeline-item">
+          <i class="fas fa-camera"></i>
+          <strong>17:40</strong> Поздравления, фото
+        </div>
+        <div class="timeline-item">
+          <i class="fas fa-car"></i>
+          <strong>18:00</strong> Трансфер в Oxus
+        </div>
+        <div class="timeline-item">
+          <i class="fas fa-glass-cheers"></i>
+          <strong>18:00</strong> Welcome
+        </div>
+        <div class="timeline-item">
+          <i class="fas fa-utensils"></i>
+          <strong>18:30</strong> Начало ужина
+        </div>
+        <div class="timeline-item">
+          <i class="fas fa-birthday-cake"></i>
+          <strong>21:30</strong> Свадебный торт
+        </div>
+        <div class="timeline-item">
+          <i class="fas fa-music"></i>
+          <strong>22:00</strong> Танцы до утра
+        </div>
+      </div>
+      <p style="margin-top: 16px; font-style: italic; color: #6B5F56;">Тайминг примерный — главное, чтобы всем было хорошо ❤︎</p>
+    </div>
+
+    <!-- ==================== ДРЕСС-КОД ==================== -->
+    <!-- 🔴 ЗАМЕНИТЬ: цвета и описание при желании -->
+    <div class="section-block" style="margin-top: 30px;">
+      <h2><i class="fas fa-vest"></i> Дресс-код</h2>
+      <div class="dresscode-block">
+        <div style="flex:1">
+          <p><strong>Нарядный casual / Коктейль</strong><br>Девушкам — красивые платья, мужчинам — рубашки и брюки (пиджак по желанию).</p>
+          <p style="margin-top: 10px;">🎨 Будем благодарны, если вы поддержите нашу палитру: молочные, кремовые, бежевые, пыльно-розовые, шампань.</p>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch" style="background: #FDFBF7;"></div>
+          <div class="swatch" style="background: #F3EAE3;"></div>
+          <div class="swatch" style="background: #E8D9CF;"></div>
+          <div class="swatch" style="background: #DBC7BB;"></div>
+          <div class="swatch" style="background: #F5E6DC;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== 6. ПОДТВЕРЖДЕНИЕ ==================== -->
+    <div class="section-block">
+      <div class="rsvp-card">
+        <h2 style="justify-content: center; margin-bottom: 16px;"><i class="far fa-envelope"></i> Подтверждение</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 12px;">Будем очень ждать вас!</p>
+        <p style="font-weight: 300; margin-bottom: 32px;">Пожалуйста, дайте знать о вашем присутствии до <strong>1 июня 2026</strong></p>
+        
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 16px; max-width: 400px; margin: 0 auto;">
+          
+          <!-- Кнопка подтверждения в стиле сайта -->
+          <!-- 🔴 ЗАМЕНИТЬ: вставьте ссылку на ваш Telegram-канал -->
+          <a href="https://t.me/ваш_канал" target="_blank" class="confirm-btn">
+            <i class="fas fa-check-circle"></i> Обязательно буду
+          </a>
+          
+          <!-- Разделитель -->
+          <div style="display: flex; align-items: center; gap: 12px; width: 100%; margin: 8px 0;">
+            <div style="height: 1px; background: linear-gradient(90deg, transparent, #D6C8BC); flex: 1;"></div>
+            <span style="color: #9A8A7E; font-size: 0.9rem;">или</span>
+            <div style="height: 1px; background: linear-gradient(90deg, #D6C8BC, transparent); flex: 1;"></div>
+          </div>
+          
+          <!-- Блок с телефоном -->
+          <!-- 🔴 ЗАМЕНИТЬ: вставьте ваш номер телефона -->
+          <div class="phone-block">
+            <i class="fas fa-phone-alt"></i>
+            <span>+7 937 376 29 14</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== ДОПОЛНИТЕЛЬНЫЕ ФОТО ==================== -->
+    <div class="section-block" style="margin: 48px 0 24px;">
+      <div class="photo-grid">
+        <div>
+          <!-- 🔴 ЗАМЕНИТЬ: положите фото в папку images/ и назовите details.jpg -->
+          <img src="images/details.jpg" alt="Детали" class="photo-image square-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback photo-image square-photo" style="display: none;">
+            <i class="fas fa-ring"></i>
+            <span>детали</span>
+          </div>
+        </div>
+        <div>
+          <!-- 🔴 ЗАМЕНИТЬ: положите фото в папку images/ и назовите moments.jpg -->
+          <img src="images/moments.jpg" alt="Моменты" class="photo-image square-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="photo-fallback photo-image square-photo" style="display: none;">
+            <i class="fas fa-camera"></i>
+            <span>моменты</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== ФИНАЛ ==================== -->
+    <div class="section-block final-thanks">
+      <div class="elegant-divider">
+        <div class="elegant-divider-line"></div>
+        <i class="fas fa-star"></i>
+        <div class="elegant-divider-line"></div>
+      </div>
+      <p style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; margin-bottom: 12px;">До встречи!</p>
+      <p style="max-width: 600px; margin: 0 auto;">Ваше присутствие и тёплые слова — самый ценный подарок для нас. Спасибо, что вы есть в нашей жизни.</p>
+      <p style="max-width: 500px; margin: 0 auto; font-size: 0.9rem; opacity: 0.8;">
+        <i class="fas fa-gift" style="margin-right: 6px;"></i> 
+         Если захотите нас порадовать — будем благодарны вкладу в наш семейный бюджет или будущий дом.
+      </p>
+      
+      <div class="footer-heart">
+        <i class="fas fa-heart"></i>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
